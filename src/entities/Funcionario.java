@@ -6,5 +6,10 @@ public class Funcionario {
 	
 	private String nome;
 	private TipoFuncionario tipo;
+	
+	public Funcionario(String nome, TipoFuncionario tipo) {
+		this.nome = nome;
+		this.tipo = tipo;
+	}
 
 }
