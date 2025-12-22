@@ -11,5 +11,13 @@ public class Funcionario {
 		this.nome = nome;
 		this.tipo = tipo;
 	}
+	
+	public String getNome() {
+		return nome;
+	}
+	
+	public TipoFuncionario getTipo() {
+		return tipo;
+	}
 
 }
