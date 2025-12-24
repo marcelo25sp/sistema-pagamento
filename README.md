@@ -53,9 +53,10 @@ src
 - **Estagiário**
   - Pagamento = bolsa auxílio fixa
 
-Cada tipo de funcionário implementa sua própria regra através do método:
+Cada tipo de funcionário implementa sua própria regra através do método: calcularPagamento()
+
 ```java
-calcularPagamento()
+
 
 
 🖥️ Exemplo de saída no console
@@ -78,6 +79,8 @@ Pagamento calculado: R$ 2200.00
 ----------------------------
 
 Processamento finalizado com sucesso!
+
+```
 
 🚀 Status do projeto
 
