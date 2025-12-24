@@ -31,6 +31,7 @@ Tudo isso sem o uso de condicionais (`if` / `switch`) para o cálculo de pagamen
 
 ## 🏗️ Estrutura do projeto
 
+```
 src
 ├── application
 │ └── Main.java
@@ -41,7 +42,7 @@ src
 │ └── Estagiario.java
 └── entities.enums
 └── TipoFuncionario.java
-
+```
 
 ---
 
