@@ -11,4 +11,9 @@ public class Estagiario extends Funcionario {
 		this.bolsaAuxilio = bolsaAuxilio;
 	}
 
+	@Override
+	public double calcularPagamento() {
+		return bolsaAuxilio;
+	}
+
 }
