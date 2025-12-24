@@ -83,23 +83,24 @@ Processamento finalizado com sucesso!
 
 ```
 
-🚀 Status do projeto
+🚀 Status do projeto:
 
 ✅ Versão 1.0 finalizada
 
 Esta versão tem foco exclusivo na demonstração de herança e polimorfismo.
 
+
 Possíveis evoluções futuras:
 
-Interação com usuário (Scanner)
+- Interação com usuário (Scanner)
 
-Menu de opções
+- Menu de opções
 
-Entrada dinâmica de dados
+- Entrada dinâmica de dados
 
-Testes unitários
+- Testes unitários
 
-Separação de camadas (service)
+- Separação de camadas (service)
 
 👨‍💻 Autor
 
