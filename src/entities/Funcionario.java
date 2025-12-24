@@ -2,7 +2,7 @@ package entities;
 
 import entities.enums.TipoFuncionario;
 
-public class Funcionario {
+public abstract class Funcionario {
 	
 	private String nome;
 	private TipoFuncionario tipo;
@@ -19,5 +19,6 @@ public class Funcionario {
 	public TipoFuncionario getTipo() {
 		return tipo;
 	}
+	
 
 }
