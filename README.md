@@ -102,11 +102,13 @@ Possíveis evoluções futuras:
 
 - Separação de camadas (service)
 
-👨‍💻 Autor
+
+👨‍💻 Autor:
 
 - Marcelo Nascimento
 - Estudante de Análise e Desenvolvimento de Sistemas
 - Foco em Backend Java
+
 
 🧠 Observação
 
