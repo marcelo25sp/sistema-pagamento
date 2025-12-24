@@ -11,7 +11,11 @@ public class FuncionarioPJ extends Funcionario {
 		super(nome, tipo);
 		this.valorHora = valorHora;
 		this.horasTrabalhadas = horasTrabalhadas;
+	}
 
+	@Override
+	public double calcularPagamento() {
+		return valorHora * horasTrabalhadas;
 	}
 
 }
