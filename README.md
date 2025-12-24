@@ -102,9 +102,9 @@ Separação de camadas (service)
 
 👨‍💻 Autor
 
-Marcelo Nascimento
-Estudante de Análise e Desenvolvimento de Sistemas
-Foco em Backend Java
+- Marcelo Nascimento
+- Estudante de Análise e Desenvolvimento de Sistemas
+- Foco em Backend Java
 
 🧠 Observação
 
