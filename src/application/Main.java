@@ -20,9 +20,9 @@ public class Main {
 
 		List<Funcionario> funcionarios = new ArrayList<>();
 
-		System.out.println("==========================");
-		System.out.println("   SISTEMA DE PAGAMENTO   ");
-		System.out.println("==========================\n");
+		System.out.println("=========================================");
+		System.out.println("   SISTEMA DE PAGAMENTO JAVA VERSÃO 2.0  ");
+		System.out.println("=========================================\n");
 
 		System.out.print("Quantos funcionarios voce deseja cadastrar? ");
 		int n = sc.nextInt();
@@ -60,17 +60,17 @@ public class Main {
 			
 			sc.nextLine();
 			System.out.println("Cadastro realizado com sucesso!");
-			System.out.println("=================================");
+			System.out.println("----------------------------------------");
 			
 		}
 		
-		System.out.println("\n========Lista de funcionários========\n");
+		System.out.println("\n========Funcionários cadastrados========\n");
 
 		for (Funcionario f : funcionarios) {
 			System.out.println("Funcionário: " + f.getNome());
 			System.out.println("Tipo: " + f.getTipo());
 			System.out.printf("Pagamento calculado: R$ %.2f%n", f.calcularPagamento());
-			System.out.println("----------------------------");
+			System.out.println("----------------------------------------");
 		}
 
 		System.out.println();
