@@ -29,10 +29,19 @@ public class Main {
 		System.out.println("0. Sair");
 		System.out.print("\nEscolha uma opção: ");
 		int opcao = sc.nextInt();
-
+		sc.nextLine(); 
+		
+		if(opcao == 1) {
+			System.out.println("\nEm construção...");
+		}else if(opcao == 2) {
+			System.out.println("\nEm construção...");
+		}else {
+			System.out.println("\nSaindo...");
+		}
+		
 		System.out.print("Quantos funcionarios voce deseja cadastrar? ");
 		int n = sc.nextInt();
-		sc.nextLine();
+		sc.nextLine(); 
 
 		for (int i = 1; i <= n; i++) {
 			System.out.print("Nome: ");
