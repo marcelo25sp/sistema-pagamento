@@ -23,6 +23,12 @@ public class Main {
 		System.out.println("=========================================");
 		System.out.println("   SISTEMA DE PAGAMENTO JAVA VERSÃO 2.0  ");
 		System.out.println("=========================================\n");
+		
+		System.out.println("1. Cadastrar funcionário");
+		System.out.println("2. Listar funcionários");
+		System.out.println("0. Sair");
+		System.out.print("\nEscolha uma opção: ");
+		int opcao = sc.nextInt();
 
 		System.out.print("Quantos funcionarios voce deseja cadastrar? ");
 		int n = sc.nextInt();
