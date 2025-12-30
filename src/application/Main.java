@@ -131,4 +131,17 @@ public class Main {
 		System.out.println("----------------------------------------");
 	}
 
+	private static void listarFuncionarios(List<Funcionario> funcionarios) {
+
+		System.out.println("\n========Funcionários cadastrados========\n");
+
+		for (Funcionario f : funcionarios) {
+			System.out.println("Funcionário: " + f.getNome());
+			System.out.println("Tipo: " + f.getTipo());
+			System.out.printf("Pagamento calculado: R$ %.2f%n", f.calcularPagamento());
+			System.out.println("----------------------------------------");
+		}
+
+	}
+
 }
