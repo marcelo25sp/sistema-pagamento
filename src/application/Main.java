@@ -21,25 +21,28 @@ public class Main {
 		List<Funcionario> funcionarios = new ArrayList<>();
 
 		System.out.println("=========================================");
-		System.out.println("   SISTEMA DE PAGAMENTO JAVA VERSÃO 2.0  ");
+		System.out.println("          SISTEMA DE PAGAMENTO           ");
 		System.out.println("=========================================\n");
 
-		System.out.println("------------------------------------------");
-		System.out.println("1. Cadastrar funcionário");
-		System.out.println("2. Listar funcionários");
-		System.out.println("0. Sair");
-		System.out.println("------------------------------------------");
-		System.out.print("\nEscolha uma opção: ");
-		int opcao = sc.nextInt();
-		sc.nextLine();
+		int opcao;
+		do {
+			System.out.println("===== MENU =====");
+			System.out.println("1. Cadastrar funcionário");
+			System.out.println("2. Listar funcionários");
+			System.out.println("0. Sair");
+			System.out.println("------------------------------------------");
+			System.out.print("\nEscolha uma opção: ");
+			opcao = sc.nextInt();
+			sc.nextLine();
 
-		if (opcao == 1) {
-			cadastrarFuncionario(funcionarios, sc);
-		} else if (opcao == 2) {
-			listarFuncionarios(funcionarios);
-		} else {
-			System.out.println("\nSaindo...");
-		}
+			if (opcao == 1) {
+				cadastrarFuncionario(funcionarios, sc);
+			} else if (opcao == 2) {
+				listarFuncionarios(funcionarios);
+			} else {
+				System.out.println("\nEncerrando o programa...");
+			}
+		} while (opcao != 0);
 
 		System.out.println();
 		System.out.println("Processamento finalizado com sucesso!");
@@ -50,6 +53,7 @@ public class Main {
 
 	private static void cadastrarFuncionario(List<Funcionario> funcionarios, Scanner sc) {
 
+		System.out.println("Cadastro do(a) funcionário(a):");
 		System.out.print("Nome: ");
 		String nome = sc.nextLine();
 		System.out.print("Tipo de Funcionário (CLT/PJ/ESTAGIARIO): ");
@@ -81,7 +85,7 @@ public class Main {
 
 		sc.nextLine();
 		System.out.println("Cadastro realizado com sucesso!");
-		System.out.println("----------------------------------------");
+		System.out.println("----------------------------------------\n");
 	}
 
 	private static void listarFuncionarios(List<Funcionario> funcionarios) {
@@ -92,7 +96,7 @@ public class Main {
 			System.out.println("Funcionário: " + f.getNome());
 			System.out.println("Tipo: " + f.getTipo());
 			System.out.printf("Pagamento calculado: R$ %.2f%n", f.calcularPagamento());
-			System.out.println("----------------------------------------");
+			System.out.println("----------------------------------------\n");
 		}
 
 	}
