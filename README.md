@@ -20,12 +20,16 @@ Tudo isso sem o uso de condicionais (`if` / `switch`) para o cálculo de pagamen
 ---
 
 ## 🧠 Conceitos aplicados
-- Programação Orientada a Objetos (POO)
-- Abstração
-- Herança
-- Polimorfismo
-- Enumerações (`enum`)
-- Coleções (`ArrayList` / `List`)
+
+- ✅ Programação Orientada a Objetos (POO)
+- ✅ Classe abstrata
+- ✅ Herança
+- ✅ Polimorfismo em tempo de execução
+- ✅ Enumerações (`enum`)
+- ✅ Listas (`List`)
+- ✅ Estruturas de repetição
+- ✅ Entrada de dados com `Scanner`
+- ✅ Organização em pacotes (`application`, `entities`, `enums`)
 
 ---
 
@@ -42,6 +46,26 @@ src
 │ └── Estagiario.java
 └── entities.enums
 └── TipoFuncionario.java
+```
+
+```
+🚀 Funcionalidades (v1.2)
+
+📋 Menu interativo no console
+
+➕ Cadastro dinâmico de funcionários
+
+💼 Tipos de funcionário:
+
+  - CLT
+
+  - PJ
+
+  - Estagiário
+
+🧮 Cálculo de pagamento específico para cada tipo
+
+📄 Listagem dos funcionários cadastrados com valores calculados
 ```
 
 ---
@@ -63,8 +87,32 @@ Cada tipo de funcionário implementa sua própria regra através do método: cal
 🖥️ Exemplo de saída no console
 
 ==========================
-   SISTEMA DE PAGAMENTO
+   SISTEMA DE PAGAMENTO   
 ==========================
+
+Quantos funcionarios voce deseja cadastrar? 3
+
+Nome: João Souza
+Tipo de Funcionário (CLT/PJ/ESTAGIARIO): CLT
+Salário Base:(R$) 6000
+Desconto do INSS:(R$) 850
+Cadastro realizado com sucesso!
+=================================
+
+Nome: Julia Azevedo
+Tipo de Funcionário (CLT/PJ/ESTAGIARIO): PJ
+Valor por hora:(R$) 22
+Horas trabalhadas: 165
+Cadastro realizado com sucesso!
+=================================
+
+Nome: Caio Henrique
+Tipo de Funcionário (CLT/PJ/ESTAGIARIO): ESTAGIARIO
+Bolsa auxílio:(R$) 2200
+Cadastro realizado com sucesso!
+=================================
+
+========Lista de funcionários========
 
 Funcionário: João Souza
 Tipo: CLT
@@ -81,26 +129,40 @@ Pagamento calculado: R$ 2200.00
 
 Processamento finalizado com sucesso!
 
+
 ```
 
 🚀 Status do projeto:
 
-✅ Versão 1.0 finalizada
+✅ Versão 1.2 finalizada
 
 Esta versão tem foco exclusivo na demonstração de herança e polimorfismo.
 
 
-Possíveis evoluções futuras:
+🔄 Evolução do Projeto
 
-- Interação com usuário (Scanner)
+✔️ v1.0 – Estrutura inicial com herança e polimorfismo (sem interação)
 
-- Menu de opções
+✔️ v1.1 – Refatorações e melhorias de organização
 
-- Entrada dinâmica de dados
+✔️ v1.2 – Menu interativo e cadastro dinâmico via console
 
-- Testes unitários
+🔜 Próximas versões:
 
-- Separação de camadas (service)
+  - Validações de entrada
+
+  - Melhor organização com classes de serviço
+
+  - Tratamento de exceções (quando o conteúdo for estudado)
+
+
+📎 Tecnologias Utilizadas
+
+  - Java
+
+  - Eclipse IDE
+
+  - Git & GitHub
 
 
 👨‍💻 Autor:
