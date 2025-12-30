@@ -24,68 +24,21 @@ public class Main {
 		System.out.println("   SISTEMA DE PAGAMENTO JAVA VERSÃO 2.0  ");
 		System.out.println("=========================================\n");
 
+		System.out.println("------------------------------------------");
 		System.out.println("1. Cadastrar funcionário");
 		System.out.println("2. Listar funcionários");
 		System.out.println("0. Sair");
+		System.out.println("------------------------------------------");
 		System.out.print("\nEscolha uma opção: ");
 		int opcao = sc.nextInt();
 		sc.nextLine();
 
 		if (opcao == 1) {
-			System.out.println("\nEm construção...");
+			cadastrarFuncionario(funcionarios, sc);
 		} else if (opcao == 2) {
-			System.out.println("\nEm construção...");
+			listarFuncionarios(funcionarios);
 		} else {
 			System.out.println("\nSaindo...");
-		}
-
-		System.out.print("Quantos funcionarios voce deseja cadastrar? ");
-		int n = sc.nextInt();
-		sc.nextLine();
-
-		for (int i = 1; i <= n; i++) {
-			System.out.print("Nome: ");
-			String nome = sc.nextLine();
-			System.out.print("Tipo de Funcionário (CLT/PJ/ESTAGIARIO): ");
-			TipoFuncionario tipo = TipoFuncionario.valueOf(sc.next().toUpperCase());
-
-			if (tipo == TipoFuncionario.CLT) {
-
-				System.out.print("Salário Base:(R$) ");
-				double salarioBase = sc.nextDouble();
-				System.out.print("Desconto do INSS:(R$) ");
-				double descontoINSS = sc.nextDouble();
-				funcionarios.add(new FuncionarioCLT(nome, salarioBase, descontoINSS, tipo));
-			}
-
-			else if (tipo == TipoFuncionario.PJ) {
-
-				System.out.print("Valor por hora:(R$) ");
-				double valorHora = sc.nextDouble();
-				System.out.print("Horas trabalhadas: ");
-				int horas = sc.nextInt();
-				funcionarios.add(new FuncionarioPJ(nome, valorHora, horas, tipo));
-			}
-
-			else {
-				System.out.print("Bolsa auxílio:(R$) ");
-				double bolsaAuxilio = sc.nextDouble();
-				funcionarios.add(new Estagiario(nome, bolsaAuxilio, tipo));
-			}
-
-			sc.nextLine();
-			System.out.println("Cadastro realizado com sucesso!");
-			System.out.println("----------------------------------------");
-
-		}
-
-		System.out.println("\n========Funcionários cadastrados========\n");
-
-		for (Funcionario f : funcionarios) {
-			System.out.println("Funcionário: " + f.getNome());
-			System.out.println("Tipo: " + f.getTipo());
-			System.out.printf("Pagamento calculado: R$ %.2f%n", f.calcularPagamento());
-			System.out.println("----------------------------------------");
 		}
 
 		System.out.println();
