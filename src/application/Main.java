@@ -37,8 +37,12 @@ public class Main {
 				cadastrarFuncionario(funcionarios, sc);
 			} else if (opcao == 2) {
 				listarFuncionarios(funcionarios);
-			} else {
+			} else if (opcao == 0){
 				System.out.println("\nEncerrando o programa...");
+			}else {
+				System.out.print("Opção inválida. Digite novamente: ");
+				opcao = sc.nextInt();
+				sc.nextLine();
 			}
 		} while (opcao != 0);
 
