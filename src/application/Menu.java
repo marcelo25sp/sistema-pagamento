@@ -1,10 +1,18 @@
 package application;
 
-import java.util.Scanner;
-
 public class Menu {
-	
-	Scanner sc = new Scanner(System.in);
-	
+
+	public Menu() {
+	}
+
+	public void exibirMenu() {
+
+		System.out.println("===== MENU =====");
+		System.out.println("1. Cadastrar funcionário");
+		System.out.println("2. Listar funcionários");
+		System.out.println("0. Sair");
+		System.out.println("------------------------------------------");
+		System.out.print("\nEscolha uma opção: ");
+	}
 
 }

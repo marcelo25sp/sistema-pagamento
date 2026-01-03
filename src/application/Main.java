@@ -17,6 +17,9 @@ public class Main {
 
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
+		
+		Menu menu = new Menu();
+		menu.exibirMenu();
 
 		List<Funcionario> funcionarios = new ArrayList<>();
 
@@ -25,7 +28,7 @@ public class Main {
 		System.out.println("=========================================\n");
 
 		int opcao;
-		
+
 		do {
 			System.out.println("===== MENU =====");
 			System.out.println("1. Cadastrar funcionário");
