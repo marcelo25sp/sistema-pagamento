@@ -25,6 +25,7 @@ public class Main {
 		System.out.println("=========================================\n");
 
 		int opcao;
+		
 		do {
 			System.out.println("===== MENU =====");
 			System.out.println("1. Cadastrar funcionário");
