@@ -18,26 +18,20 @@ public class Main {
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 		
-		Menu menu = new Menu();
-		menu.exibirMenu();
-
-		List<Funcionario> funcionarios = new ArrayList<>();
+		Menu menu = new Menu();		
 
 		System.out.println("=========================================");
 		System.out.println("          SISTEMA DE PAGAMENTO           ");
 		System.out.println("=========================================\n");
+		
+		List<Funcionario> funcionarios = new ArrayList<>();
 
 		int opcao;
 
 		do {
-			System.out.println("===== MENU =====");
-			System.out.println("1. Cadastrar funcionário");
-			System.out.println("2. Listar funcionários");
-			System.out.println("0. Sair");
-			System.out.println("------------------------------------------");
-			System.out.print("\nEscolha uma opção: ");
+			menu.exibirMenu();
 			opcao = sc.nextInt();
-			sc.nextLine();
+			sc.nextLine(); // limpa o buffer
 
 			if (opcao == 1) {
 				cadastrarFuncionario(funcionarios, sc);

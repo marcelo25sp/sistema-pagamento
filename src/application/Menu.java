@@ -12,7 +12,9 @@ public class Menu {
 		System.out.println("2. Listar funcionários");
 		System.out.println("0. Sair");
 		System.out.println("------------------------------------------");
-		System.out.print("\nEscolha uma opção: ");
+		System.out.print("Escolha uma opção: ");
 	}
+	
+	
 
 }
