@@ -54,5 +54,11 @@ public class FuncionarioGerenciamento {
 		System.out.println("----------------------------------------\n");
 
 	}
+	
+	public void listarFuncionarios(List<Funcionario> funcionarios) {
+		for(Funcionario f : funcionarios) {
+			System.out.printf("Nome: %s - R$ %.2f%n", f.getNome(), f.calcularPagamento());
+		}
+	}
 
 }
