@@ -24,7 +24,7 @@ public class Main {
 
 		System.out.println("=========================================");
 		System.out.println("          SISTEMA DE PAGAMENTO           ");
-		System.out.println("=========================================\n");
+		System.out.println("=========================================");
 
 		int opcao;
 

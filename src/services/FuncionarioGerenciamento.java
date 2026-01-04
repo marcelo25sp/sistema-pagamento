@@ -56,8 +56,10 @@ public class FuncionarioGerenciamento {
 	}
 	
 	public void listarFuncionarios() {
+		System.out.println("\nLista de funcionários:");
 		for(Funcionario f : funcionarios) {
-			System.out.printf("Nome: %s - R$ %.2f%n", f.getNome(), f.calcularPagamento());
+			System.out.printf("Nome: %s \nSalário: R$ %.2f \nTipo de contrato: %s\n", f.getNome(), f.calcularPagamento(), f.getTipo());
+			System.out.println("-----------------------------------------------------");
 		}
 	}
 
