@@ -17,13 +17,13 @@ public class Main {
 
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
-		
-		Menu menu = new Menu();		
+
+		Menu menu = new Menu();
 
 		System.out.println("=========================================");
 		System.out.println("          SISTEMA DE PAGAMENTO           ");
 		System.out.println("=========================================\n");
-		
+
 		List<Funcionario> funcionarios = new ArrayList<>();
 
 		int opcao;
@@ -37,9 +37,9 @@ public class Main {
 				cadastrarFuncionario(funcionarios, sc);
 			} else if (opcao == 2) {
 				listarFuncionarios(funcionarios);
-			} else if (opcao == 0){
+			} else if (opcao == 0) {
 				System.out.println("\nEncerrando o programa...");
-			}else {
+			} else {
 				System.out.print("Opção inválida. Digite novamente: ");
 				opcao = sc.nextInt();
 				sc.nextLine();
@@ -88,19 +88,6 @@ public class Main {
 		sc.nextLine();
 		System.out.println("Cadastro realizado com sucesso!");
 		System.out.println("----------------------------------------\n");
-	}
-
-	private static void listarFuncionarios(List<Funcionario> funcionarios) {
-
-		System.out.println("\n========Funcionários cadastrados========\n");
-
-		for (Funcionario f : funcionarios) {
-			System.out.println("Funcionário: " + f.getNome());
-			System.out.println("Tipo: " + f.getTipo());
-			System.out.printf("Pagamento calculado: R$ %.2f%n", f.calcularPagamento());
-			System.out.println("----------------------------------------\n");
-		}
-
 	}
 
 }
