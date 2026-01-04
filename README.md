@@ -39,17 +39,18 @@ Demonstrar o uso correto de:
 
 src
 ├── application
-│    ├── Main.java
-│    └── Menu.java
+│   ├── Main.java
+│   └── Menu.java
 ├── services
-│    └── FuncionarioGerenciamento.java
+│   └── FuncionarioGerenciamento.java
 ├── entities
-│    ├── Funcionario.java
-│    ├── FuncionarioCLT.java
-│    ├── FuncionarioPJ.java
-│    └── Estagiario.java
+│   ├── Funcionario.java
+│   ├── FuncionarioCLT.java
+│   ├── FuncionarioPJ.java
+│   └── Estagiario.java
 └── entities.enums
-     └── TipoFuncionario.java
+    └── TipoFuncionario.java
+
 
 
 ---
@@ -81,11 +82,9 @@ Pagamento = valor da hora × horas trabalhadas
 ### Estagiário
 Pagamento = bolsa auxílio  
 
-Cada tipo de funcionário implementa sua própria regra através do método:
+Cada tipo de funcionário implementa sua própria regra através do método calcularPagamento()
 
-```java
-calcularPagamento()
-
+```
 ==========================
    SISTEMA DE PAGAMENTO
 ==========================
@@ -95,6 +94,28 @@ calcularPagamento()
 3 - Relatório de pagamentos
 4 - Total da folha
 0 - Sair
+
+Opção escolhida: 3
+
+====== RELATÓRIO DE PAGAMENTOS ======
+
+Funcionário: João Souza
+Tipo: CLT
+Pagamento: R$ 5150.00
+-----------------------------------
+
+Funcionário: Julia Azevedo
+Tipo: PJ
+Pagamento: R$ 3630.00
+-----------------------------------
+
+Funcionário: Caio Henrique
+Tipo: ESTAGIARIO
+Pagamento: R$ 2200.00
+-----------------------------------
+
+Total da folha de pagamento: R$ 10980.00
+```
 
 
 🚀 Status do projeto
@@ -106,14 +127,19 @@ calcularPagamento()
 ✔️ v1.0 – Estrutura inicial
 ✔️ v1.1 – Refatorações
 ✔️ v1.2 – Menu interativo
-✔️ v1.3 – Classe de gerenciamento, UX, relatórios e total da folha
+✔️ v1.3 – Introdução da classe de gerenciamento, UX, relatórios e valor total da folha de pagamento
+
+Esta versão foca em:
+
+- Organização do código
+- Separação de responsabilidades
+- Melhor experiência de uso no console
+- Relatórios e cálculo agregado da folha
 
 📎 Tecnologias Utilizadas
 
 - Java
-
 - Eclipse IDE
-
 - Git & GitHub
 
 
