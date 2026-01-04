@@ -54,25 +54,31 @@ public class FuncionarioGerenciamento {
 		System.out.println("----------------------------------------\n");
 
 	}
-	
+
 	public void listarFuncionarios() {
 		System.out.println("\nLista de funcionários:");
-		for(Funcionario f : funcionarios) {
-			System.out.printf("Nome: %s \nSalário: R$ %.2f \nTipo de contrato: %s\n", f.getNome(), f.calcularPagamento(), f.getTipo());
+		for (Funcionario f : funcionarios) {
+			System.out.printf("Nome: %s \nSalário: R$ %.2f \nTipo de contrato: %s\n", f.getNome(),
+					f.calcularPagamento(), f.getTipo());
 			System.out.println("-----------------------------------------------------");
 		}
 	}
-	
+
 	public void gerarRelatorioPagamentos() {
+
 		System.out.println("===== RELATÓRIO DE PAGAMENTOS =====\n");
-		
-		if(funcionarios.isEmpty()) {
+
+		if (funcionarios.isEmpty()) {
 			System.out.println("Nenhum funcionário cadastrado!");
 		}
-		
-		for(Funcionario f : funcionarios) {
-			System.out.printf("Funcionário: %s | Tipo: %s | Pagamento: R$ %.2f%n", f.getNome(), f.getTipo(), f.calcularPagamento());
+
+		double valorTotal = 0.0;
+		for (Funcionario f : funcionarios) {
+			System.out.printf("Funcionário: %s | Tipo: %s | Pagamento: R$ %.2f%n", f.getNome(), f.getTipo(),f.calcularPagamento());
+			valorTotal += f.calcularPagamento();
 		}
+		
+		System.out.printf("Valor Total da folha de pagamento: R$ %.2f%n", valorTotal);
 		System.out.println("=========================================================");
 	}
 

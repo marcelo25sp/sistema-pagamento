@@ -37,6 +37,8 @@ public class Main {
 				funcionarios.cadastrarFuncionario(sc);
 			} else if (opcao == 2) {
 				funcionarios.listarFuncionarios();
+			} else if (opcao == 3) {
+				funcionarios.gerarRelatorioPagamentos();
 			} else if (opcao == 0) {
 				System.out.println("\nEncerrando o programa...");
 			} else {
