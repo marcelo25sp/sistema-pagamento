@@ -63,6 +63,13 @@ public class FuncionarioGerenciamento {
 		}
 	}
 	
-	
+	public void gerarRelatorioPagamentos() {
+		System.out.println("===== Relatório de pagamentos =====\n");
+		
+		for(Funcionario f : funcionarios) {
+			System.out.printf("Funcionário: %s | Tipo: %s | Pagamento: R$ %.2f%n", f.getNome(), f.getTipo(), f.calcularPagamento());
+		}
+		System.out.println("=========================================================");
+	}
 
 }
