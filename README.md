@@ -37,20 +37,23 @@ Demonstrar o uso correto de:
 
 ## 🏗️ Estrutura do projeto
 
+```
 src
+├── application
+│   ├── Main.java
+│   └── Menu.java
+├── services
+│   └── FuncionarioGerenciamento.java
+├── entities
+│   ├── Funcionario.java
+│   ├── FuncionarioCLT.java
+│   ├── FuncionarioPJ.java
+│   └── Estagiario.java
+└── entities.enums
+    └── TipoFuncionario.java
 
- - application
-        Main.java
-        Menu.java
- - services
-         FuncionarioGerenciamento.java
- - entities
-         Funcionario.java
-         FuncionarioCLT.java
-         FuncionarioPJ.java
-         Estagiario.java
- - entities.enums
-         TipoFuncionario.java
+
+```
 
 
 
