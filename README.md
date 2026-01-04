@@ -129,9 +129,13 @@ Total da folha de pagamento: R$ 10980.00
 🔄 Evolução do Projeto
 
 ✔️ v1.0 – Estrutura inicial
+
 ✔️ v1.1 – Refatorações
+
 ✔️ v1.2 – Menu interativo
+
 ✔️ v1.3 – Introdução da classe de gerenciamento, UX, relatórios e valor total da folha de pagamento
+
 
 Esta versão foca em:
 
@@ -149,9 +153,9 @@ Esta versão foca em:
 
 👨‍💻 Autor
 
-Marcelo Nascimento
-Estudante de Análise e Desenvolvimento de Sistemas
-Foco em Backend Java
+- Marcelo Nascimento
+- Estudante de Análise e Desenvolvimento de Sistemas
+- Foco em Backend Java
 
 🧠 Observação
 
