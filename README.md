@@ -36,19 +36,20 @@ Demonstrar o uso correto de:
 ---
 
 ## 🏗️ Estrutura do projeto
+
 src
 ├── application
-│ ├── Main.java
-│ └── Menu.java
+│    ├── Main.java
+│    └── Menu.java
 ├── services
-│ └── FuncionarioGerenciamento.java
+│    └── FuncionarioGerenciamento.java
 ├── entities
-│ ├── Funcionario.java
-│ ├── FuncionarioCLT.java
-│ ├── FuncionarioPJ.java
-│ └── Estagiario.java
+│    ├── Funcionario.java
+│    ├── FuncionarioCLT.java
+│    ├── FuncionarioPJ.java
+│    └── Estagiario.java
 └── entities.enums
-└── TipoFuncionario.java
+     └── TipoFuncionario.java
 
 
 ---
@@ -105,8 +106,7 @@ calcularPagamento()
 ✔️ v1.0 – Estrutura inicial
 ✔️ v1.1 – Refatorações
 ✔️ v1.2 – Menu interativo
-✔️ v1.3 – Classe de gerenciamento
-✔️ v1.4 – UX, relatórios e total da folha
+✔️ v1.3 – Classe de gerenciamento, UX, relatórios e total da folha
 
 📎 Tecnologias Utilizadas
 
