@@ -1,44 +1,47 @@
 # 💼 Sistema de Pagamento de Funcionários – Java
 
 ## 📌 Sobre o projeto
-Este projeto foi desenvolvido com o objetivo de **praticar e consolidar os conceitos de Herança e Polimorfismo em Java**, de forma simples, clara e objetiva.
+Este projeto foi desenvolvido com o objetivo de **praticar e consolidar conceitos fundamentais de Programação Orientada a Objetos (POO) em Java**, com foco em **Herança, Polimorfismo e organização de código em camadas**.
 
-A aplicação simula o cálculo de pagamento de diferentes tipos de funcionários, utilizando **Programação Orientada a Objetos** e explorando o comportamento polimórfico das classes.
+A aplicação simula o **gerenciamento e cálculo de pagamento de funcionários**, utilizando boas práticas de design orientado a objetos e evolução incremental por versões.
 
 ---
 
 ## 🎯 Objetivo principal
 Demonstrar o uso correto de:
-- Classe abstrata
-- Herança
-- Sobrescrita de métodos
-- Polimorfismo em tempo de execução
-- Listas (`List`)
 
-Tudo isso sem o uso de condicionais (`if` / `switch`) para o cálculo de pagamento.
+- Classe abstrata  
+- Herança  
+- Sobrescrita de métodos  
+- Polimorfismo em tempo de execução  
+- Separação de responsabilidades (Menu / Serviço / Entidades)  
+
+➡️ **Sem uso de condicionais (`if` / `switch`) para o cálculo de pagamento**, delegando essa responsabilidade às classes concretas.
 
 ---
 
 ## 🧠 Conceitos aplicados
-
-- ✅ Programação Orientada a Objetos (POO)
-- ✅ Classe abstrata
-- ✅ Herança
-- ✅ Polimorfismo em tempo de execução
-- ✅ Enumerações (`enum`)
-- ✅ Listas (`List`)
-- ✅ Estruturas de repetição
-- ✅ Entrada de dados com `Scanner`
-- ✅ Organização em pacotes (`application`, `entities`, `enums`)
+✅ Programação Orientada a Objetos (POO)  
+✅ Classe abstrata  
+✅ Herança  
+✅ Polimorfismo em tempo de execução  
+✅ Enumerações (`enum`)  
+✅ Listas (`List`)  
+✅ Estruturas de repetição  
+✅ Entrada de dados com `Scanner`  
+✅ Organização em pacotes  
+✅ Classes de serviço (Service Layer)  
+✅ Experiência do usuário (UX) no console  
 
 ---
 
 ## 🏗️ Estrutura do projeto
-
-```
 src
 ├── application
-│ └── Main.java
+│ ├── Main.java
+│ └── Menu.java
+├── services
+│ └── FuncionarioGerenciamento.java
 ├── entities
 │ ├── Funcionario.java
 │ ├── FuncionarioCLT.java
@@ -46,133 +49,80 @@ src
 │ └── Estagiario.java
 └── entities.enums
 └── TipoFuncionario.java
-```
 
-```
-🚀 Funcionalidades (v1.2)
 
-📋 Menu interativo no console
+---
 
-➕ Cadastro dinâmico de funcionários
+## 🚀 Funcionalidades (v1.3)
 
+📋 Menu interativo no console (UX aprimorada)  
+➕ Cadastro dinâmico de funcionários  
 💼 Tipos de funcionário:
+- CLT  
+- PJ  
+- Estagiário  
 
-  - CLT
-
-  - PJ
-
-  - Estagiário
-
-🧮 Cálculo de pagamento específico para cada tipo
-
-📄 Listagem dos funcionários cadastrados com valores calculados
-```
+🧮 Cálculo de pagamento específico para cada tipo  
+📄 Listagem detalhada dos funcionários cadastrados  
+💰 **Cálculo do total da folha de pagamento**  
+🧠 Centralização da lógica de negócio na classe de serviço  
 
 ---
 
 ## 📋 Regras de negócio
-- **CLT**
-  - Pagamento = salário base − desconto INSS
-- **PJ**
-  - Pagamento = valor da hora × horas trabalhadas
-- **Estagiário**
-  - Pagamento = bolsa auxílio fixa
 
-Cada tipo de funcionário implementa sua própria regra através do método: calcularPagamento()
+### CLT
+Pagamento = salário base − desconto do INSS  
+
+### PJ
+Pagamento = valor da hora × horas trabalhadas  
+
+### Estagiário
+Pagamento = bolsa auxílio  
+
+Cada tipo de funcionário implementa sua própria regra através do método:
 
 ```java
-
-
-
-🖥️ Exemplo de saída no console
+calcularPagamento()
 
 ==========================
-   SISTEMA DE PAGAMENTO   
+   SISTEMA DE PAGAMENTO
 ==========================
 
-Quantos funcionarios voce deseja cadastrar? 3
-
-Nome: João Souza
-Tipo de Funcionário (CLT/PJ/ESTAGIARIO): CLT
-Salário Base:(R$) 6000
-Desconto do INSS:(R$) 850
-Cadastro realizado com sucesso!
-=================================
-
-Nome: Julia Azevedo
-Tipo de Funcionário (CLT/PJ/ESTAGIARIO): PJ
-Valor por hora:(R$) 22
-Horas trabalhadas: 165
-Cadastro realizado com sucesso!
-=================================
-
-Nome: Caio Henrique
-Tipo de Funcionário (CLT/PJ/ESTAGIARIO): ESTAGIARIO
-Bolsa auxílio:(R$) 2200
-Cadastro realizado com sucesso!
-=================================
-
-========Lista de funcionários========
-
-Funcionário: João Souza
-Tipo: CLT
-Pagamento calculado: R$ 5150.00
-----------------------------
-Funcionário: Julia Azevedo
-Tipo: PJ
-Pagamento calculado: R$ 3630.00
-----------------------------
-Funcionário: Caio Henrique
-Tipo: ESTAGIARIO
-Pagamento calculado: R$ 2200.00
-----------------------------
-
-Processamento finalizado com sucesso!
+1 - Cadastrar funcionário
+2 - Listar funcionários
+3 - Relatório de pagamentos
+4 - Total da folha
+0 - Sair
 
 
-```
+🚀 Status do projeto
 
-🚀 Status do projeto:
-
-✅ Versão 1.2 finalizada
-
-Esta versão tem foco exclusivo na demonstração de herança e polimorfismo.
-
+✅ Versão 1.3 finalizada
 
 🔄 Evolução do Projeto
 
-✔️ v1.0 – Estrutura inicial com herança e polimorfismo (sem interação)
-
-✔️ v1.1 – Refatorações e melhorias de organização
-
-✔️ v1.2 – Menu interativo e cadastro dinâmico via console
-
-🔜 Próximas versões:
-
-  - Validações de entrada
-
-  - Melhor organização com classes de serviço
-
-  - Tratamento de exceções (quando o conteúdo for estudado)
-
+✔️ v1.0 – Estrutura inicial
+✔️ v1.1 – Refatorações
+✔️ v1.2 – Menu interativo
+✔️ v1.3 – Classe de gerenciamento
+✔️ v1.4 – UX, relatórios e total da folha
 
 📎 Tecnologias Utilizadas
 
-  - Java
+- Java
 
-  - Eclipse IDE
+- Eclipse IDE
 
-  - Git & GitHub
+- Git & GitHub
 
 
-👨‍💻 Autor:
+👨‍💻 Autor
 
-- Marcelo Nascimento
-- Estudante de Análise e Desenvolvimento de Sistemas
-- Foco em Backend Java
-
+Marcelo Nascimento
+Estudante de Análise e Desenvolvimento de Sistemas
+Foco em Backend Java
 
 🧠 Observação
 
-Este projeto faz parte do meu processo contínuo de aprendizado, priorizando prática, organização de código e evolução técnica.
-
+Este projeto faz parte do meu processo contínuo de aprendizado, priorizando prática, clareza de código e evolução técnica.

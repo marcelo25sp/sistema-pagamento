@@ -51,7 +51,7 @@ public class FuncionarioGerenciamento {
 
 		sc.nextLine();
 		System.out.println("Cadastro realizado com sucesso!");
-		System.out.println("----------------------------------------\n");
+		System.out.println("------------------------------------------------------------------------\n");
 
 	}
 
@@ -60,7 +60,7 @@ public class FuncionarioGerenciamento {
 		for (Funcionario f : funcionarios) {
 			System.out.printf("Nome: %s \nSalário: R$ %.2f \nTipo de contrato: %s\n", f.getNome(),
 					f.calcularPagamento(), f.getTipo());
-			System.out.println("-----------------------------------------------------");
+			System.out.println("--------------------------------------------------------------------");
 		}
 	}
 
@@ -78,9 +78,9 @@ public class FuncionarioGerenciamento {
 			valorTotal += f.calcularPagamento();
 		}
 		
-		System.out.println("\n---------------------------------------------------------");
+		System.out.println("\n----------------------------------------------------------------------");
 		System.out.printf("Valor Total da folha de pagamento: R$ %.2f%n", valorTotal);
-		System.out.println("=========================================================");
+		System.out.println("========================================================================");
 	}
 
 }
