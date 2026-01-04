@@ -19,7 +19,7 @@ public class FuncionarioGerenciamento {
 
 	public void cadastrarFuncionario(Scanner sc) {
 
-		System.out.println("Cadastro do(a) funcionário(a):");
+		System.out.println("\nCadastro do(a) funcionário(a):");
 		System.out.print("Nome: ");
 		String nome = sc.nextLine();
 		System.out.print("Tipo de Funcionário (CLT/PJ/ESTAGIARIO): ");
@@ -66,7 +66,7 @@ public class FuncionarioGerenciamento {
 
 	public void gerarRelatorioPagamentos() {
 
-		System.out.println("===== RELATÓRIO DE PAGAMENTOS =====\n");
+		System.out.println("\n===== RELATÓRIO DE PAGAMENTOS =====\n");
 
 		if (funcionarios.isEmpty()) {
 			System.out.println("Nenhum funcionário cadastrado!");
@@ -78,6 +78,7 @@ public class FuncionarioGerenciamento {
 			valorTotal += f.calcularPagamento();
 		}
 		
+		System.out.println("\n---------------------------------------------------------");
 		System.out.printf("Valor Total da folha de pagamento: R$ %.2f%n", valorTotal);
 		System.out.println("=========================================================");
 	}
