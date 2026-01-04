@@ -17,7 +17,7 @@ public class FuncionarioGerenciamento {
 
 	private List<Funcionario> funcionarios = new ArrayList<>();
 
-	public void cadastrarFuncionario(List<Funcionario> funcionarios, Scanner sc) {
+	public void cadastrarFuncionario(Scanner sc) {
 
 		System.out.println("Cadastro do(a) funcionário(a):");
 		System.out.print("Nome: ");
@@ -55,7 +55,7 @@ public class FuncionarioGerenciamento {
 
 	}
 	
-	public void listarFuncionarios(List<Funcionario> funcionarios) {
+	public void listarFuncionarios() {
 		for(Funcionario f : funcionarios) {
 			System.out.printf("Nome: %s - R$ %.2f%n", f.getNome(), f.calcularPagamento());
 		}
