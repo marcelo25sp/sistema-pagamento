@@ -64,7 +64,11 @@ public class FuncionarioGerenciamento {
 	}
 	
 	public void gerarRelatorioPagamentos() {
-		System.out.println("===== Relatório de pagamentos =====\n");
+		System.out.println("===== RELATÓRIO DE PAGAMENTOS =====\n");
+		
+		if(funcionarios.isEmpty()) {
+			System.out.println("Nenhum funcionário cadastrado!");
+		}
 		
 		for(Funcionario f : funcionarios) {
 			System.out.printf("Funcionário: %s | Tipo: %s | Pagamento: R$ %.2f%n", f.getNome(), f.getTipo(), f.calcularPagamento());
