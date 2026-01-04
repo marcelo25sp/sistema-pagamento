@@ -1,4 +1,4 @@
-# 💼 Sistema de Pagamento de Funcionários – Java
+# 💼 Sistema de Pagamento de Funcionários – Java(v1.3)
 
 ## 📌 Sobre o projeto
 Este projeto foi desenvolvido com o objetivo de **praticar e consolidar conceitos fundamentais de Programação Orientada a Objetos (POO) em Java**, com foco em **Herança, Polimorfismo e organização de código em camadas**.
