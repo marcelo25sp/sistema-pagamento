@@ -33,19 +33,25 @@ public class Main {
 			opcao = sc.nextInt();
 			sc.nextLine(); // limpa o buffer
 
-			if (opcao == 1) {
+			switch (opcao) {
+			case 1:
 				funcionarios.cadastrarFuncionario(sc);
-			} else if (opcao == 2) {
+				break;
+			case 2:
 				funcionarios.listarFuncionarios();
-			} else if (opcao == 3) {
+				break;
+			case 3:
 				funcionarios.gerarRelatorioPagamentos();
-			} else if (opcao == 0) {
+				break;
+			case 0:
 				System.out.println("\nEncerrando o programa...");
-			} else {
+				break;
+			default:
 				System.out.print("Opção inválida. Digite novamente: ");
 				opcao = sc.nextInt();
 				sc.nextLine();
 			}
+
 		} while (opcao != 0);
 
 		System.out.println();
