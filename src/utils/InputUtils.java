@@ -28,5 +28,17 @@ public class InputUtils {
 		sc.nextLine(); // limpa o buffer
 		return valor;
 	}
+	
+	public double lerDouble(String mensagem) {
+		System.out.print(mensagem);
+		while(!sc.hasNextDouble()) { //valida se o número é do tipo double (ajuste posterior)
+			System.out.println("Entrada inválida! Digite um número válido:");
+			sc.next();
+			System.out.print(mensagem);
+		}
+		double valor = sc.nextDouble();
+		sc.nextLine(); // limpa o buffer
+		return valor;
+	}
 
 }
