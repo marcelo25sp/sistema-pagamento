@@ -4,6 +4,8 @@ import entities.enums.TipoFuncionario;
 
 public class FuncionarioDTO {
 	
+	// Classe para transporte de dados do funcionário
+	
 	private String nome;
 	private TipoFuncionario tipo;
 	
