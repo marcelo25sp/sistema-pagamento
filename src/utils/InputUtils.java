@@ -40,5 +40,10 @@ public class InputUtils {
 		sc.nextLine(); // limpa o buffer
 		return valor;
 	}
+	
+	public void pausar() {
+		System.out.println("\nPressione ENTER para continuar...");
+		sc.nextLine();
+	}
 
 }
