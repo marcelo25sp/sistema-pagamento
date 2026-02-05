@@ -4,6 +4,12 @@ import java.util.Scanner;
 
 public class InputUtils {
 
+	/*
+	 * Classe utilitária para centralizar a leitura e validação de dados
+	 * do console. Reduz duplicações, melhora a organização e desacopla a
+	 * entrada de dados da lógica de negócio.
+	 */
+
 	private Scanner sc;
 
 	public InputUtils(Scanner sc) {
@@ -16,10 +22,10 @@ public class InputUtils {
 		System.out.print(mensagem);
 		return sc.nextLine();
 	}
-	
+
 	public int lerInt(String mensagem) {
 		System.out.print(mensagem);
-		while(!sc.hasNextInt()) { //valida se o número é do tipo inteiro
+		while (!sc.hasNextInt()) { // valida se o número é do tipo inteiro
 			System.out.println("Entrada inválida! Digite um número inteiro:");
 			sc.next();
 			System.out.print(mensagem);
@@ -28,10 +34,10 @@ public class InputUtils {
 		sc.nextLine(); // limpa o buffer
 		return valor;
 	}
-	
+
 	public double lerDouble(String mensagem) {
 		System.out.print(mensagem);
-		while(!sc.hasNextDouble()) { //valida se o número é do tipo double (ajuste posterior)
+		while (!sc.hasNextDouble()) { // valida se o número é do tipo double (ajuste posterior)
 			System.out.println("Entrada inválida! Digite um número válido:");
 			sc.next();
 			System.out.print(mensagem);
@@ -40,7 +46,7 @@ public class InputUtils {
 		sc.nextLine(); // limpa o buffer
 		return valor;
 	}
-	
+
 	public void pausar() {
 		System.out.println("\nPressione ENTER para continuar...");
 		sc.nextLine();
