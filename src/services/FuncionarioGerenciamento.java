@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import dto.FuncionarioDTO;
+import dto.PagamentoDTO;
 import entities.Estagiario;
 import entities.Funcionario;
 import entities.FuncionarioCLT;
@@ -17,7 +17,8 @@ public class FuncionarioGerenciamento {
 	}
 
 	private List<Funcionario> funcionarios = new ArrayList<>();
-
+	
+	
 	public void cadastrarFuncionario(Scanner sc) {
 
 		System.out.println("\nCadastro do(a) funcionário(a):");
@@ -26,7 +27,7 @@ public class FuncionarioGerenciamento {
 		System.out.print("Tipo de Funcionário (CLT/PJ/ESTAGIARIO): ");
 		TipoFuncionario tipo = TipoFuncionario.valueOf(sc.next().toUpperCase());
 
-		if (tipo == TipoFuncionario.CLT) {
+		if(tipo == TipoFuncionario.CLT) {
 
 			System.out.print("Salário Base:(R$) ");
 			double salarioBase = sc.nextDouble();
@@ -67,6 +68,16 @@ public class FuncionarioGerenciamento {
 					f.calcularPagamento(), f.getTipo());
 			System.out.println("--------------------------------------------------------------------");
 		}
+	}
+	
+	public List<PagamentoDTO> gerarRelatorioDTO(){
+		
+		List<PagamentoDTO> relatorio = new ArrayList<>();
+		
+		for(Funcionario f : funcionarios) {
+			relatorio.add(new PagamentoDTO(f.getNome(), f.getTipo(), f.calcularPagamento()));
+		}
+		return relatorio;
 	}
 
 	public void gerarRelatorioPagamentos() {
