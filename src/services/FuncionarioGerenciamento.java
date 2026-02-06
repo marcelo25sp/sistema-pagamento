@@ -4,11 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import dto.FuncionarioDTO;
 import dto.PagamentoDTO;
-import entities.Estagiario;
 import entities.Funcionario;
-import entities.FuncionarioCLT;
-import entities.FuncionarioPJ;
 import entities.enums.TipoFuncionario;
 
 public class FuncionarioGerenciamento {
@@ -21,42 +19,60 @@ public class FuncionarioGerenciamento {
 	
 	public void cadastrarFuncionario(Scanner sc) {
 
-		System.out.println("\nCadastro do(a) funcionário(a):");
-		System.out.print("Nome: ");
-		String nome = sc.nextLine();
-		System.out.print("Tipo de Funcionário (CLT/PJ/ESTAGIARIO): ");
-		TipoFuncionario tipo = TipoFuncionario.valueOf(sc.next().toUpperCase());
+	    System.out.println("\nCadastro do(a) funcionário(a):");
 
-		if(tipo == TipoFuncionario.CLT) {
+	    System.out.print("Nome: ");
+	    String nome = sc.nextLine();
 
-			System.out.print("Salário Base:(R$) ");
-			double salarioBase = sc.nextDouble();
-			System.out.print("Desconto do INSS:(R$) ");
-			double descontoINSS = sc.nextDouble();
-			funcionarios.add(new FuncionarioCLT(nome, salarioBase, descontoINSS, tipo));
-		}
+	    System.out.print("Tipo de Funcionário (CLT/PJ/ESTAGIARIO): ");
+	    TipoFuncionario tipo = TipoFuncionario.valueOf(sc.next().toUpperCase());
 
-		else if (tipo == TipoFuncionario.PJ) {
+	    Double salarioBase = null;
+	    Double descontoINSS = null;
+	    Double valorHora = null;
+	    Integer horas = null;
+	    Double bolsaAuxilio = null;
 
-			System.out.print("Valor por hora:(R$) ");
-			double valorHora = sc.nextDouble();
-			System.out.print("Horas trabalhadas: ");
-			int horas = sc.nextInt();
-			funcionarios.add(new FuncionarioPJ(nome, valorHora, horas, tipo));
-		}
+	    if (tipo == TipoFuncionario.CLT) {
+	        System.out.print("Salário Base:(R$) ");
+	        salarioBase = sc.nextDouble();
+	        System.out.print("Desconto do INSS:(R$) ");
+	        descontoINSS = sc.nextDouble();
+	    }
 
-		else {
-			System.out.print("Bolsa auxílio:(R$) ");
-			double bolsaAuxilio = sc.nextDouble();
-			funcionarios.add(new Estagiario(nome, bolsaAuxilio, tipo));
-		}
+	    else if (tipo == TipoFuncionario.PJ) {
+	        System.out.print("Valor por hora:(R$) ");
+	        valorHora = sc.nextDouble();
+	        System.out.print("Horas trabalhadas: ");
+	        horas = sc.nextInt();
+	    }
 
-		sc.nextLine();
-		System.out.println("Cadastro realizado com sucesso!");
-		System.out.println("------------------------------------------------------------------------\n");
+	    else {
+	        System.out.print("Bolsa auxílio:(R$) ");
+	        bolsaAuxilio = sc.nextDouble();
+	    }
 
+	    sc.nextLine();
+
+	    //  Usa DTO + Factory
+	    FuncionarioDTO dto = new FuncionarioDTO(
+	            nome,
+	            tipo,
+	            salarioBase,
+	            descontoINSS,
+	            valorHora,
+	            horas,
+	            bolsaAuxilio
+	    );
+
+	    Funcionario funcionario = FuncionarioFactory.criar(dto);
+	    funcionarios.add(funcionario);
+
+	    System.out.println("Cadastro realizado com sucesso!");
+	    System.out.println("------------------------------------------------------------------------\n");
 	}
 
+	
 	public void adicionarFuncionario(Funcionario funcionario) {
 		funcionarios.add(funcionario);
 	}
