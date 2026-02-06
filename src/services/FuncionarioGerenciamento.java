@@ -55,14 +55,10 @@ public class FuncionarioGerenciamento {
 		System.out.println("------------------------------------------------------------------------\n");
 
 	}
-	
-	public void adicionarFuncionarioDTO(FuncionarioDTO dto) {
 
-		Funcionario funcionario = FuncionarioFactory.criar(dto);
+	public void adicionarFuncionario(Funcionario funcionario) {
 		funcionarios.add(funcionario);
-
 	}
-
 
 	public void listarFuncionarios() {
 		System.out.println("\nLista de funcionários:");
@@ -83,46 +79,14 @@ public class FuncionarioGerenciamento {
 
 		double valorTotal = 0.0;
 		for (Funcionario f : funcionarios) {
-			System.out.printf("Funcionário: %s | Tipo: %s | Pagamento: R$ %.2f%n", f.getNome(), f.getTipo(),f.calcularPagamento());
+			System.out.printf("Funcionário: %s | Tipo: %s | Pagamento: R$ %.2f%n", f.getNome(), f.getTipo(),
+					f.calcularPagamento());
 			valorTotal += f.calcularPagamento();
 		}
-		
+
 		System.out.println("\n----------------------------------------------------------------------");
 		System.out.printf("Valor Total da folha de pagamento: R$ %.2f%n", valorTotal);
 		System.out.println("========================================================================");
 	}
 
 }
-
-/*
- * 	public void adicionarFuncionarioDTO(FuncionarioDTO dto) {
-
-	    Funcionario funcionario;
-
-	    if (dto.getTipo() == TipoFuncionario.CLT) {
-	        funcionario = new FuncionarioCLT(
-	                dto.getNome(),
-	                dto.getSalarioBase(),
-	                dto.getDescontoINSS(),
-	                dto.getTipo()
-	        );
-	    }
-	    else if (dto.getTipo() == TipoFuncionario.PJ) {
-	        funcionario = new FuncionarioPJ(
-	                dto.getNome(),
-	                dto.getValorHora(),
-	                dto.getHorasTrabalhadas(),
-	                dto.getTipo()
-	        );
-	    }
-	    else {
-	        funcionario = new Estagiario(
-	                dto.getNome(),
-	                dto.getBolsaAuxilio(),
-	                dto.getTipo()
-	        );
-	    }
-
-	    funcionarios.add(funcionario);
-	}
-*/
