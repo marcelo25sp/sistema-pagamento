@@ -1,15 +1,10 @@
 package application;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
-import entities.Estagiario;
-import entities.Funcionario;
-import entities.FuncionarioCLT;
-import entities.FuncionarioPJ;
-import entities.enums.TipoFuncionario;
+import dto.PagamentoDTO;
 import services.FuncionarioGerenciamento;
 
 public class Main {
@@ -41,8 +36,30 @@ public class Main {
 				funcionarios.listarFuncionarios();
 				break;
 			case 3:
-				funcionarios.gerarRelatorioPagamentos();
+
+				List<PagamentoDTO> relatorio = funcionarios.gerarRelatorioDTO();
+
+				if (relatorio.isEmpty()) {
+					System.out.println("\nNenhum funcionário cadastrado!");
+					break;
+				}
+
+				double total = 0.0;
+
+				System.out.println("\n===== RELATÓRIO DE PAGAMENTOS =====\n");
+
+				for (PagamentoDTO p : relatorio) {
+					System.out.printf("Funcionário: %s | Tipo: %s | Pagamento: R$ %.2f%n", p.getNome(), p.getTipo(),
+							p.getValorPagamento());
+					total += p.getValorPagamento();
+				}
+
+				System.out.println("\n----------------------------------------------------------------------");
+				System.out.printf("Valor Total da folha: R$ %.2f%n", total);
+				System.out.println("========================================================================");
+
 				break;
+
 			case 0:
 				System.out.println("\nEncerrando o programa...");
 				break;
