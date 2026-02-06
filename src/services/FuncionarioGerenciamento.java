@@ -95,6 +95,16 @@ public class FuncionarioGerenciamento {
 		}
 		return relatorio;
 	}
+	
+	public double calcularTotalFolha(List<PagamentoDTO> relatorio) {
+		double total = 0.0;
+		
+		for(PagamentoDTO p : relatorio) {
+			total += p.getValorPagamento();
+		}
+		return total;
+		
+	}
 
 	public void gerarRelatorioPagamentos() {
 

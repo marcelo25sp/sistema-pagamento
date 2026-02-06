@@ -44,15 +44,14 @@ public class Main {
 					break;
 				}
 
-				double total = 0.0;
-
 				System.out.println("\n===== RELATÓRIO DE PAGAMENTOS =====\n");
 
 				for (PagamentoDTO p : relatorio) {
 					System.out.printf("Funcionário: %s | Tipo: %s | Pagamento: R$ %.2f%n", p.getNome(), p.getTipo(),
 							p.getValorPagamento());
-					total += p.getValorPagamento();
 				}
+
+				double total = funcionarios.calcularTotalFolha(relatorio);
 
 				System.out.println("\n----------------------------------------------------------------------");
 				System.out.printf("Valor Total da folha: R$ %.2f%n", total);
