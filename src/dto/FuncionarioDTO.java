@@ -82,10 +82,7 @@ public class FuncionarioDTO {
 
 	public void setBolsaAuxilio(Double bolsaAuxilio) {
 		this.bolsaAuxilio = bolsaAuxilio;
-	}
-	
-	
-	
+	}	
 	
 
 }
