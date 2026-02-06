@@ -58,33 +58,9 @@ public class FuncionarioGerenciamento {
 	
 	public void adicionarFuncionarioDTO(FuncionarioDTO dto) {
 
-	    Funcionario funcionario;
+		Funcionario funcionario = FuncionarioFactory.criar(dto);
+		funcionarios.add(funcionario);
 
-	    if (dto.getTipo() == TipoFuncionario.CLT) {
-	        funcionario = new FuncionarioCLT(
-	                dto.getNome(),
-	                dto.getSalarioBase(),
-	                dto.getDescontoINSS(),
-	                dto.getTipo()
-	        );
-	    }
-	    else if (dto.getTipo() == TipoFuncionario.PJ) {
-	        funcionario = new FuncionarioPJ(
-	                dto.getNome(),
-	                dto.getValorHora(),
-	                dto.getHorasTrabalhadas(),
-	                dto.getTipo()
-	        );
-	    }
-	    else {
-	        funcionario = new Estagiario(
-	                dto.getNome(),
-	                dto.getBolsaAuxilio(),
-	                dto.getTipo()
-	        );
-	    }
-
-	    funcionarios.add(funcionario);
 	}
 
 
@@ -117,3 +93,36 @@ public class FuncionarioGerenciamento {
 	}
 
 }
+
+/*
+ * 	public void adicionarFuncionarioDTO(FuncionarioDTO dto) {
+
+	    Funcionario funcionario;
+
+	    if (dto.getTipo() == TipoFuncionario.CLT) {
+	        funcionario = new FuncionarioCLT(
+	                dto.getNome(),
+	                dto.getSalarioBase(),
+	                dto.getDescontoINSS(),
+	                dto.getTipo()
+	        );
+	    }
+	    else if (dto.getTipo() == TipoFuncionario.PJ) {
+	        funcionario = new FuncionarioPJ(
+	                dto.getNome(),
+	                dto.getValorHora(),
+	                dto.getHorasTrabalhadas(),
+	                dto.getTipo()
+	        );
+	    }
+	    else {
+	        funcionario = new Estagiario(
+	                dto.getNome(),
+	                dto.getBolsaAuxilio(),
+	                dto.getTipo()
+	        );
+	    }
+
+	    funcionarios.add(funcionario);
+	}
+*/
