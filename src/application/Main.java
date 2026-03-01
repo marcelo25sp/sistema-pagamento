@@ -4,7 +4,9 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
+import dto.FuncionarioDTO;
 import dto.PagamentoDTO;
+import entities.enums.TipoFuncionario;
 import services.FuncionarioGerenciamento;
 
 public class Main {
@@ -31,7 +33,43 @@ public class Main {
 			switch (opcao) {
 			case 1:
 				
-				funcionarios.cadastrarFuncionario(sc);
+				System.out.println("\nCadastro de funcionário(a):");
+				
+				System.out.print("Nome: ");
+				String nome = sc.nextLine();
+				
+				System.out.println("Tipo de funcionário(a): (CLT/PJ/ESTAGIÁRIO) ");
+				TipoFuncionario tipo = TipoFuncionario.valueOf(sc.next().toUpperCase());
+				
+				Double salarioBase = null;
+				Double descontoINSS = null;
+				Double valorHora = null;
+				Integer horas = null;
+				Double bolsaAuxilio = null;
+				
+				if(tipo == TipoFuncionario.CLT) {
+					System.out.print("Salário Base:(R$) ");
+					salarioBase = sc.nextDouble();
+					System.out.print("Desconto do INSS:(R$) ");
+					descontoINSS = sc.nextDouble();					
+				}else if(tipo == TipoFuncionario.ESTAGIARIO) {
+					System.out.print("Bolsa Auxílio:(R$) ");
+					bolsaAuxilio = sc.nextDouble();
+				}else {
+					System.out.print("Valor por Hora:(R$) ");
+					valorHora = sc.nextDouble();
+					System.out.print("Horas trabalhadas:(R$) ");
+					horas = sc.nextInt();
+				}
+				
+				sc.nextLine();
+				
+				FuncionarioDTO dto = new FuncionarioDTO(nome, tipo, salarioBase, descontoINSS, valorHora, horas, bolsaAuxilio);
+				
+				funcionarios.cadastrarFuncionario(dto);
+				
+				System.out.println("Cadastro realizado com sucesso!");
+				
 				break;
 				
 			case 2:
