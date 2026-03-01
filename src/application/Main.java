@@ -30,11 +30,15 @@ public class Main {
 
 			switch (opcao) {
 			case 1:
+				
 				funcionarios.cadastrarFuncionario(sc);
 				break;
+				
 			case 2:
+				
 				funcionarios.listarFuncionarios();
 				break;
+				
 			case 3:
 
 				List<PagamentoDTO> relatorio = funcionarios.gerarRelatorioDTO();

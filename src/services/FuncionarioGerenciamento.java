@@ -16,6 +16,11 @@ public class FuncionarioGerenciamento {
 
 	private List<Funcionario> funcionarios = new ArrayList<>();
 	
+	public void cadastrarFuncionario(FuncionarioDTO dto) {
+		Funcionario funcionario = FuncionarioFactory.criar(dto);
+		funcionarios.add(funcionario);
+	}
+	
 	
 	public void cadastrarFuncionario(Scanner sc) {
 
