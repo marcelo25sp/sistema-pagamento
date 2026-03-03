@@ -65,4 +65,22 @@ class FuncionarioGerenciamentoTest {
 
 	}
 
+	@Test
+	void deveCalcularPagamentoEstagiarioCorretamente() {
+
+		FuncionarioGerenciamento gerenciamento = new FuncionarioGerenciamento();
+
+		FuncionarioDTO funcionario = new FuncionarioDTO("João", TipoFuncionario.ESTAGIARIO, null, null, null, null,
+				1500.0);
+
+		gerenciamento.cadastrarFuncionario(funcionario);
+
+		var relatorio = gerenciamento.gerarRelatorioDTO();
+
+		double valorPagamento = relatorio.get(0).getValorPagamento();
+
+		assertEquals(1500.0, valorPagamento);
+
+	}
+
 }
