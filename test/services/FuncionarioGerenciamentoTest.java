@@ -2,6 +2,7 @@ package services;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
@@ -104,6 +105,21 @@ class FuncionarioGerenciamentoTest {
 		double total = gerenciamento.calcularTotalFolha(relatorio);
 
 		assertEquals(8300.0, total);
+
+	}
+
+	@Test
+	void deveRetornarTotalZeroQuandoNaoHouverFuncionarios() {
+
+		FuncionarioGerenciamento gerenciamento = new FuncionarioGerenciamento();
+
+		var relatorio = gerenciamento.gerarRelatorioDTO();
+
+		assertTrue(relatorio.isEmpty());
+
+		double total = gerenciamento.calcularTotalFolha(relatorio);
+
+		assertEquals(0.0, total);
 
 	}
 
