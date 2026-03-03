@@ -83,4 +83,28 @@ class FuncionarioGerenciamentoTest {
 
 	}
 
+	@Test
+	void deveCalcularPagamentoTotalDaFolhaCorretamente() {
+
+		FuncionarioGerenciamento gerenciamento = new FuncionarioGerenciamento();
+
+		// CLT
+		gerenciamento
+				.cadastrarFuncionario(new FuncionarioDTO("João", TipoFuncionario.CLT, 3000.0, 200.0, null, null, null));
+
+		// PJ
+		gerenciamento.cadastrarFuncionario(new FuncionarioDTO("João", TipoFuncionario.PJ, null, null, 40.0, 100, null));
+
+		// ESTAGIÁRIO
+		gerenciamento.cadastrarFuncionario(
+				new FuncionarioDTO("João", TipoFuncionario.ESTAGIARIO, null, null, null, null, 1500.0));
+
+		var relatorio = gerenciamento.gerarRelatorioDTO();
+
+		double total = gerenciamento.calcularTotalFolha(relatorio);
+
+		assertEquals(8300.0, total);
+
+	}
+
 }
