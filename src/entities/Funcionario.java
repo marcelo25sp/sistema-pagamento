@@ -2,6 +2,7 @@ package entities;
 
 import entities.enums.TipoFuncionario;
 import exception.FuncionarioInvalidoException;
+import exception.TipoFuncionarioInvalidoException;
 
 public abstract class Funcionario {
 
@@ -15,7 +16,7 @@ public abstract class Funcionario {
 		}
 
 		if (tipo == null) {
-			throw new FuncionarioInvalidoException("O tipo do contrato do funcionário não pode ser nulo.");
+			throw new TipoFuncionarioInvalidoException("O tipo do contrato do funcionário não pode ser nulo.");
 		}
 
 		this.nome = nome;
