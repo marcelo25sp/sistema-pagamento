@@ -1,6 +1,7 @@
 package entities;
 
 import entities.enums.TipoFuncionario;
+import exception.FuncionarioInvalidoException;
 
 public class Estagiario extends Funcionario {
 
@@ -10,7 +11,7 @@ public class Estagiario extends Funcionario {
 		super(nome, tipo);
 
 		if (bolsaAuxilio <= 0.0) {
-			throw new IllegalArgumentException("Valor deve ser maior que R$ 0.00");
+			throw new FuncionarioInvalidoException("Valor deve ser maior que R$ 0.00");
 		}
 
 		this.bolsaAuxilio = bolsaAuxilio;

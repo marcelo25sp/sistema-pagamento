@@ -1,6 +1,7 @@
 package entities;
 
 import entities.enums.TipoFuncionario;
+import exception.FuncionarioInvalidoException;
 
 public abstract class Funcionario {
 
@@ -10,11 +11,11 @@ public abstract class Funcionario {
 	public Funcionario(String nome, TipoFuncionario tipo) {
 
 		if (nome == null || nome.trim().isEmpty()) {
-			throw new IllegalArgumentException("Nome do funcionário não pode ser vazio.");
+			throw new FuncionarioInvalidoException("Nome do funcionário não pode ser vazio.");
 		}
 
 		if (tipo == null) {
-			throw new IllegalArgumentException("O tipo do contrato do funcionário não pode ser nulo.");
+			throw new FuncionarioInvalidoException("O tipo do contrato do funcionário não pode ser nulo.");
 		}
 
 		this.nome = nome;

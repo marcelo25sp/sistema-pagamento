@@ -1,6 +1,7 @@
 package entities;
 
 import entities.enums.TipoFuncionario;
+import exception.FuncionarioInvalidoException;
 
 public class FuncionarioCLT extends Funcionario {
 
@@ -11,15 +12,15 @@ public class FuncionarioCLT extends Funcionario {
 		super(nome, tipo);
 		
 		if(salarioBase <= 0) {
-			throw new IllegalArgumentException("Salário Base deve ser maior que R$ 0.00");
+			throw new FuncionarioInvalidoException("Salário Base deve ser maior que R$ 0.00");
 		}
 		
 		if(descontoINSS < 0) {
-			throw new IllegalArgumentException("Desconto INSS não pode ser negativo.");
+			throw new FuncionarioInvalidoException("Desconto INSS não pode ser negativo.");
 		}
 		
 		if(descontoINSS < salarioBase) {
-			throw new IllegalArgumentException("Desconto INSS não pode ser maior que o Salario Base.");
+			throw new FuncionarioInvalidoException("Desconto INSS não pode ser maior que o Salario Base.");
 		}
 		
 		this.salarioBase = salarioBase;
