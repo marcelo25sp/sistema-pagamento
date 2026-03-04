@@ -54,24 +54,6 @@ public class FuncionarioGerenciamento {
 
 	}
 
-	public void gerarRelatorioPagamentos() {
 
-		System.out.println("\n===== RELATÓRIO DE PAGAMENTOS =====\n");
-
-		if (funcionarios.isEmpty()) {
-			System.out.println("Nenhum funcionário cadastrado!");
-		}
-
-		double valorTotal = 0.0;
-		for (Funcionario f : funcionarios) {
-			System.out.printf("Funcionário: %s | Tipo: %s | Pagamento: R$ %.2f%n", f.getNome(), f.getTipo(),
-					f.calcularPagamento());
-			valorTotal += f.calcularPagamento();
-		}
-
-		System.out.println("\n----------------------------------------------------------------------");
-		System.out.printf("Valor Total da folha de pagamento: R$ %.2f%n", valorTotal);
-		System.out.println("========================================================================");
-	}
 
 }
