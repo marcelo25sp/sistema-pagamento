@@ -16,8 +16,8 @@ public class FuncionarioConsoleUI {
 
 	public FuncionarioConsoleUI(FuncionarioGerenciamento funcionarios) {
 		this.funcionarios = funcionarios;
-		this.sc = sc;
-		this.menu = menu;
+		this.sc = new Scanner(System.in);
+		this.menu = new Menu();
 	}
 
 	public void iniciar() {
