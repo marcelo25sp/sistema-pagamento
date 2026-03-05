@@ -25,13 +25,8 @@ public class FuncionarioGerenciamento {
 		funcionarios.add(funcionario);
 	}
 
-	public void listarFuncionarios() {
-		System.out.println("\nLista de funcionários:");
-		for (Funcionario f : funcionarios) {
-			System.out.printf("Nome: %s \nSalário: R$ %.2f \nTipo de contrato: %s\n", f.getNome(),
-					f.calcularPagamento(), f.getTipo());
-			System.out.println("--------------------------------------------------------------------");
-		}
+	public List<Funcionario> listarFuncionarios() {
+		return new ArrayList<>(funcionarios);
 	}
 
 	public List<PagamentoDTO> gerarRelatorioDTO() {

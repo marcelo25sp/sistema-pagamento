@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 import dto.FuncionarioDTO;
 import dto.PagamentoDTO;
+import entities.Funcionario;
 import entities.enums.TipoFuncionario;
 import services.FuncionarioGerenciamento;
 
@@ -40,7 +41,7 @@ public class FuncionarioConsoleUI {
 				break;
 
 			case 2:
-				funcionarios.listarFuncionarios();
+				listarFuncionarios();
 				break;
 
 			case 3:
@@ -124,6 +125,30 @@ public class FuncionarioConsoleUI {
 		System.out.printf("Valor Total da folha: R$ %.2f%n", total);
 		System.out.println("========================================================================");
 
+	}
+	
+	private void listarFuncionarios() {
+		
+	    List<Funcionario> lista = funcionarios.listarFuncionarios();
+
+	    if (lista.isEmpty()) {
+	        System.out.println("\nNenhum funcionário cadastrado!");
+	        return;
+	    }
+
+	    System.out.println("\n===== LISTA DE FUNCIONÁRIOS =====\n");
+
+	    for (Funcionario f : lista) {
+	        System.out.printf(
+	                "Nome: %s | Tipo: %s | Pagamento: R$ %.2f%n",
+	                f.getNome(),
+	                f.getTipo(),
+	                f.calcularPagamento()
+	        );
+	    }
+
+	    System.out.println("=====================================================");
+	    
 	}
 
 }
