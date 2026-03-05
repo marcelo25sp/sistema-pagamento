@@ -88,7 +88,7 @@ src
 
 ---
 
-## 🚀 Funcionalidades (v1.3)
+## 🚀 Funcionalidades (v3.0)
 
 📋 Menu interativo no console (UX aprimorada)  
 ➕ Cadastro dinâmico de funcionários  
