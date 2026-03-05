@@ -1,9 +1,11 @@
-# 💼 Sistema de Pagamento de Funcionários – Java(v1.3)
+# 💼 Sistema de Pagamento de Funcionários – Java Console (v3.0)
 
 ## 📌 Sobre o projeto
 Este projeto foi desenvolvido com o objetivo de **praticar e consolidar conceitos fundamentais de Programação Orientada a Objetos (POO) em Java**, com foco em **Herança, Polimorfismo e organização de código em camadas**.
 
 A aplicação simula o **gerenciamento e cálculo de pagamento de funcionários**, utilizando boas práticas de design orientado a objetos e evolução incremental por versões.
+
+Esta versão introduz melhorias arquiteturais importantes, como **DTOs, Factory Pattern, tratamento de exceções customizadas e testes unitários**.
 
 ---
 
@@ -21,6 +23,8 @@ Demonstrar o uso correto de:
 ---
 
 ## 🧠 Conceitos aplicados
+
+
 ✅ Programação Orientada a Objetos (POO)  
 ✅ Classe abstrata  
 ✅ Herança  
@@ -31,28 +35,53 @@ Demonstrar o uso correto de:
 ✅ Entrada de dados com `Scanner`  
 ✅ Organização em pacotes  
 ✅ Classes de serviço (Service Layer)  
-✅ Experiência do usuário (UX) no console  
+✅ Experiência do usuário (UX) no console 
+✅ Arquitetura e Organização
+✅ DTO (Data Transfer Object)
+✅ Testes Unitários com JUnit
+✅ Validações de dominio
+✅ Exceptions Customizadas
+
+
 
 ---
 
 ## 🏗️ Estrutura do projeto
 
 ```
+
 src
 ├── application
 │   ├── Main.java
-│   └── Menu.java
+│   ├── Menu.java
+│   └── FuncionarioConsoleUI.java
+│
 ├── services
-│   └── FuncionarioGerenciamento.java
+│   ├── FuncionarioGerenciamento.java
+│   └── FuncionarioFactory.java
+│
 ├── entities
 │   ├── Funcionario.java
 │   ├── FuncionarioCLT.java
 │   ├── FuncionarioPJ.java
 │   └── Estagiario.java
-└── entities.enums
-    └── TipoFuncionario.java
-
-
+│
+├── entities.enums
+│   └── TipoFuncionario.java
+│
+├── dto
+│   ├── FuncionarioDTO.java
+│   └── PagamentoDTO.java
+│
+├── exception
+│   ├── FuncionarioInvalidoException.java
+│   └── TipoFuncionarioInvalidoException.java
+│
+├── utils
+│   └── InputUtils.java
+│
+└── tests
+    └── FuncionarioGerenciamentoTest.java
 ```
 
 
@@ -121,12 +150,43 @@ Pagamento: R$ 2200.00
 Total da folha de pagamento: R$ 10980.00
 ```
 
+---
+## ⚠️ Validações de domínio
 
-🚀 Status do projeto
+O sistema utiliza **fail-fast**, impedindo a criação de objetos inválidos.
 
-✅ Versão 1.3 finalizada
+Exemplos:
 
-🔄 Evolução do Projeto
+- Nome do funcionário não pode ser vazio
+- Tipo de funcionário não pode ser nulo
+- Salário base deve ser maior que zero
+- Valor da hora deve ser positivo
+- Horas trabalhadas devem ser maiores que zero
+
+Caso alguma regra seja violada, o sistema lança **exceções customizadas**.
+
+
+
+---
+## 🧪 Testes Unitários
+
+O projeto possui **testes automatizados com JUnit**, garantindo o funcionamento correto das regras de negócio.
+
+Testes implementados:
+
+- Cálculo de pagamento CLT
+- Cálculo de pagamento PJ
+- Cálculo de pagamento Estagiário
+- Cálculo do total da folha
+- Cenário sem funcionários cadastrados
+
+
+
+## 🚀 Status do projeto
+- ✅ Versão 3.0 finalizada
+---
+
+## 🔄 Evolução do Projeto
 
 ✔️ v1.0 – Estrutura inicial
 
@@ -136,22 +196,20 @@ Total da folha de pagamento: R$ 10980.00
 
 ✔️ v1.3 – Introdução da classe de gerenciamento, UX, relatórios e valor total da folha de pagamento
 
+✔️ v3.0 – Testes Unitários(JUnit 5), Exceptions Customizadas, Validações de domínio e Arquitetura mais profissional
 
-Esta versão foca em:
 
-- Organização do código
-- Separação de responsabilidades
-- Melhor experiência de uso no console
-- Relatórios e cálculo agregado da folha
 
-📎 Tecnologias Utilizadas
+
+## 📎 Tecnologias Utilizadas
 
 - Java
 - Eclipse IDE
 - Git & GitHub
+- JUnit5
 
 
-👨‍💻 Autor
+## 👨‍💻 Autor
 
 - Marcelo Nascimento
 - Estudante de Análise e Desenvolvimento de Sistemas
@@ -160,3 +218,6 @@ Esta versão foca em:
 🧠 Observação
 
 Este projeto faz parte do meu processo contínuo de aprendizado, priorizando prática, clareza de código e evolução técnica.
+Novas versões estão sendo planejadas, incluindo: 
+
+➡️ **Versão 4.0 – API REST com Spring Boot**
